@@ -3,7 +3,38 @@
 /* width 가로 두께 (shortend 표기법으로 작성하면 -> border-width
 solid :실선 */
 /* 안쪽 여백 설정 - padding 시계방향으로 영향을 줌. 위-> 우측 -> 아래 -> 좌측 순으로.*/
+/* 바깥쪽 여백 설정 - margin */
+/* 박스 사이징 - box-sizing */
 .like {
+  box-sizing: border-box;
   border: 5px solid green;
-  padding: 20px 40px 100px 200px;
+  padding: 20px;
+  width: 150px;
+  margin: 50px;
+
+  div {
+    background-color: yellow;
+  }
+}
+
+.bootcamp {
+  border: 1px solid purple;
+  padding: 0 100px;
+}
+
+/* width, height 속성으로 크기 지정 */
+/* inline일 경우 width가 적용되지 않음 */
+/* inline-block일 경우 width가 적용 됨 */
+.lion {
+  display: block;
+  border: 5px solid red;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+/* 아래 박스와 겹침 */
+.teacher {
+  margin-bottom: 50px;
+  width: 300px;
+  margin-left: -50px;
 }
