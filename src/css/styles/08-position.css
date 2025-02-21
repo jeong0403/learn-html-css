@@ -1,0 +1,45 @@
+@import '/src/common/mini-reset.css';
+
+body {
+  margin: 50px;
+}
+
+.lion {
+  border: 1px solid black;
+  background-color: black;
+
+  .like {
+    border: 1px solid red;
+    background-color: yellow;
+    position: re;
+    /* left: 50px;
+  top: 50px; */
+    height: 50px;
+    top: -5px;
+    left: -5px;
+  }
+}
+
+.box {
+  position: relative;
+  border: 1px solid blue;
+  height: 100px;
+}
+
+.bootcamp {
+  background-color: aqua;
+  position: absolute;
+  /* top 50px, left 100px 하고 부모(box) relative, 자식(bootcamp) absolute 비교 */
+  /* top: 50px;
+  left: 100px; */
+  /* top, left, right, bottom 모두 0  */
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+
+h6 {
+  background-color: pink;
+}
