@@ -1,0 +1,22 @@
+.likelion {
+  .likelion__list {
+    list-style: none;
+
+    /* class  뒤에__list 이름? 붙일 수 없음. 작동 안 됨 */
+    /* &__list{
+      list-style: none;
+    } */
+
+    &:hover {
+      background-color: pink;
+    }
+
+    .likelion__item {
+      color: green;
+
+      .likelion__link {
+        color: inherit;
+      }
+    }
+  }
+}
