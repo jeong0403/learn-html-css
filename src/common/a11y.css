@@ -1,0 +1,11 @@
+.sr-only {
+  position: absolute; /* 본문 영역 차지하지 않음, 일반 흐름 벗어나서 띄움 */
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap; /* 줄바꿈, 공백에 대한 처리 금지 */
+  border: 0;
+}
