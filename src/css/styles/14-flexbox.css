@@ -1,0 +1,65 @@
+@import '/src/common/theme.css';
+
+html, body{
+  font-family: 'SUIT', sans-serif;
+}
+
+
+/* reset을 사용하지 않으면 box-sizing : contentbox로 작용하기 때문에, 박스 사이즈 맞추려고 작성 */
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+/* flex 파헤치기 */
+/* flex container가 됨 */
+.case-01 {
+  display: flex;
+  /* 보기 편하라고 border와 padding을 준 것 */
+  border: 1px solid red;
+  /* padding: 10px; */
+  inline-size: 622px;
+  block-size: 522px;
+  /* 부모 container 안에서 item의 열 방향이 유연해짐 column-reverse(반대로) */
+  /* flex-direction: column-reverse; */
+  /* default 값인 low(예전엔 flex에 필수로 줘야 했으나 지금은 없어도 동일한 모습) */
+  /* flex-direction: row; */
+  /* row-revers는 float:right을 item에 각각 준 것과 동일한 모습 */
+  /* flex-direction: row-reverse; */
+  /* 줄바꿈 허용 여부 (default값은 nowrap;) */
+  /* flex-wrap: nowrap; */
+  /* flex-direction 속성과 flex-wrap 속성을 단축해서 지정할 때 */
+  flex-flow: row wrap;
+  /* 메인축(주축)을 정렬하는거구나. 주축을 결정하는 것은 flex-derection(row / column) */
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* row-gap, column-gap을 함께 지정할 수 있는 단축 속성 */
+  gap: 20px 40px;
+  
+
+  [class*='item'] {
+    /* margin-block: 10px; */
+    border: 1px solid currentColor;
+    background: var(--pastel-yellow);
+    /* inline-size: 100px;
+    block-size: 100px; */
+    /* normal flow에서도 세로 중앙 정렬이 가능함 (flex와 꼭 같이 쓰는 게 아님) */
+    text-align: center;
+    align-content: center;
+    /* 기존에 세로 기준 가운데 정렬을 지원하지 않을 때 사용하던 트릭 */
+    /* line-height: 100px; */
+  }
+
+  .item1 {
+    /* inline-size: 200px; */
+    font-size: 48px
+  }
+
+  .item2 {
+    /* inline-size: 200px; */
+    font-size: 30px;
+  
+  }
+}
