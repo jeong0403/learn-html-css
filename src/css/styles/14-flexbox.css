@@ -1,9 +1,9 @@
 @import '/src/common/theme.css';
 
-html, body{
+html,
+body {
   font-family: 'SUIT', sans-serif;
 }
-
 
 /* reset을 사용하지 않으면 box-sizing : contentbox로 작용하기 때문에, 박스 사이즈 맞추려고 작성 */
 body *,
@@ -13,6 +13,7 @@ body *::after {
 }
 
 /* flex 파헤치기 */
+/* flex container 관련 속성 */
 /* flex container가 됨 */
 .case-01 {
   display: flex;
@@ -37,7 +38,6 @@ body *::after {
   align-content: center;
   /* row-gap, column-gap을 함께 지정할 수 있는 단축 속성 */
   gap: 20px 40px;
-  
 
   [class*='item'] {
     /* margin-block: 10px; */
@@ -54,12 +54,45 @@ body *::after {
 
   .item1 {
     /* inline-size: 200px; */
-    font-size: 48px
+    font-size: 48px;
   }
 
   .item2 {
     /* inline-size: 200px; */
     font-size: 30px;
+  }
+}
+
+/* 플렉스 아이템 관련 속성 */
+.case-02 {
+  border: 1px solid green;
+  /* inline-size = width 주는 것과 같음 */
+  inline-size: 502px;
+  display: flex;
+  flex-flow: row nowrap;
+
+  [class^='item'] {
+    border: 1px solid currentColor;
+    /* width: 100px;
+    inline-size: 100px;
+    height: 100px;
+    block-size: 100px; */
+    text-align: center;
+    align-content: center;
+    /* flex-basis: 200px;
+    flex-shrink: 1;
+    flex-grow: 0; */
+    /* flex-grow, flex-shrkink, flex-basis 속성으로 단축 표기 */
+    flex: 0 1 150px;
   
+  }
+
+  /* .item4{
+    order: 0;
+  } */
+
+  div:nth-child(even) {
+    order: -1;
+    /* flex-grow: 2; */
   }
 }
