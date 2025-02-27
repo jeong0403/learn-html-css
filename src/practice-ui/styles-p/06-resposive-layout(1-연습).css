@@ -1,0 +1,58 @@
+@import "/src/common/best-reset.css";
+@import "/src/common/theme.css";
+
+/* 헤더 */
+.header{
+  background: var(--pastel-yellow);
+  height: 10vh;
+}
+
+
+/* 내비게이션 */
+.navigation{
+  background: var(--pastel-green);
+  height: 20vh;
+}
+
+/* 메인 콘텐츠 및 사이드바 wrapper */
+.content-side-wrapper{
+  border: 3px solid black;
+  display: flow-root;
+}
+
+
+
+
+/* 메인 콘텐츠 */
+.content{
+  background: var(--pastel-lilac);
+  height: 30vh;
+
+  @media (min-width: 768px){
+    float: left;
+    width: 50%;
+    /* 768px이상에서 content와 sidebar 가로 배치 이루어지려면 .content-side-wrapper의 총 높이 결정 필요 */
+    /* .contetn와 .sidebar가 동일한 높이를 유지하려면, content(vh)+sidebar(vh) 합친 높이 필요함함 */
+    height: 60vh;
+  }
+}
+
+
+/* 사이드바 */
+.sidebar{
+  background: var(--pastel-blue);
+  height: 30vh;
+
+  @media (min-width: 768px){
+    float: left;
+    width: 50%;
+    height: 60vh;
+  }
+
+}
+
+/* 푸터 */
+.footer{
+  background: var(--pastel-apricot);
+  height: 10vh;
+}
