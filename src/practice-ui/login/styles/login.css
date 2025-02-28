@@ -1,0 +1,79 @@
+/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+/* display: none; */
+
+:root {
+  /* font-size */
+  --small: 0.875rem;
+  --default: 1rem;
+
+  /* color */
+  --default-color: #121212;
+  --custom-color: #24388d;
+  --white: #fff;
+  --border-color: #dadada;
+  --green: #03cf5d;
+  --back-color: #e9f0fd;
+}
+
+.fieldset {
+  background-image {
+    content: url(../images/naver\ logo.svg);
+    width: 14.375rem;
+    /* align-content: center; */
+  }
+  
+
+
+  /* 모바일 */
+  @media (max-width: 768px) {
+  }
+
+  /* 데스크탑 */
+  @media (min-width: 768px) {
+  }
+
+  .userID {
+  }
+
+  .userPwd {
+  }
+
+  .login-check-keep {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.3125rem;
+    margin-top: 0.625rem;
+
+    .login-checkbox {
+      display: none;
+      background-image: url("../images/unchecked.svg");
+    }
+
+    .login-checkbox input[type="checkbox"] {
+      background-image: url("../images/checked.svg");
+    }
+  }
+
+  .ip-security-check {
+    font-size: var(--default);
+    color: var(--default-color);
+  }
+
+  #security-switch {
+    margin-top: 0.625rem;
+    display: none;
+  }
+
+  #security-switch input[type="checkbox"] {
+    font-size: var(--default);
+    color: var(--back-color);
+  }
+
+  .login-btn {
+    font-size: var(--default);
+    height: 2.8125rem;
+    color: var(--white);
+    background: var(--green);
+    margin-top: 1.25rem;
+  }
+}
