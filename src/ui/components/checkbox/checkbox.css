@@ -1,0 +1,93 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/login-theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 체크박스 (배경이미지) */
+.checkbox{
+  --size: 1.5rem;
+
+  /* background: yellow; */
+  display: inline-flex;
+  height: var(--size);
+  block-size: var(--size);
+  /* p-re: 부모를 기준 요소로 만듦  */
+  position: relative;
+
+  input{
+    /* display: none하면 스크린 리더가 읽을 수 없고, 키보드 접근이 안 됨 */
+    /* display: none; */
+    /* 자리는 그대론데 떠있는 거 */
+    position: absolute;
+    top: 0;
+    inset-block-start: 0;
+    left: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    width: var(--size);
+    inline-size: var(--size);
+    height: var(--size);
+    block-size: var(--size);
+    appearance: none;
+  }
+
+  /* 주석 처리하고, a11y.css에 기본 스타일링으로 첨부함 */
+  /* input:focus{
+    outline: 0;
+    box-shadow: 0 0 0 1px var(--blue-900);
+    border-radius: var(--rounded-xs);
+  } */
+
+
+  label.bg-img{
+    background: url(/src/assets/naver/unchecked.svg) no-repeat;
+    padding-left: 1.875rem;
+    /* padding-left와 동일 */
+    /* padding-inline-start: 1.875rem; */
+    /* text-indent: 2rem; */
+    align-content: center;
+
+  }
+
+  input:checked + label.bg-img{
+    background-image: url(/src/assets/naver/checked.svg);
+  }
+}
+
+/* 체크박스 (svg 요소) */
+.checkbox.svg{
+  /* background: pink; */
+  display: inline-flex;
+  align-items: center;
+  column-gap: .375rem;
+  position: relative;
+  
+  input{
+    position: absolute;
+    top: 0;
+    inset-block-start: 0;
+    left: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    width: var(--size);
+    inline-size: var(--size);
+    height: var(--size);
+    block-size: var(--size);
+    appearance: none;
+  
+  }
+
+  label{
+    display: contents;
+  }
+
+  input:checked + label .svg--area,
+  input:checked + label .svg--border{
+    fill: var(--green-500);
+  }
+
+  input:checked + label .svg--mark{
+    fill: var(--white);
+  }
+
+}
