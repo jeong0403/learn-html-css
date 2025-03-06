@@ -1,0 +1,62 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.masonry-layout {
+  /* background: yellow; */
+  columns: 1;
+  column-gap: 1em;
+
+  @media (min-width: 640px) {
+    columns: 2;
+  }
+  @media (min-width: 760px) {
+    columns: 3;
+  }
+  @media (min-width: 1024px) {
+    columns: 4;
+  }
+  @media (min-width: 1280px) {
+    columns: 5;
+  }
+  @media (min-width: 1440px) {
+    columns: 6;
+  }
+
+  figure {
+    border: 1px solid gray;
+    padding: 1em;
+    display: grid;
+    margin: 2em 0;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    img,
+    figcaption {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    img {
+      width: 100%;
+      /* inline-size: 100%; */
+      filter: sepia();
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    figcaption {
+      background: rgb(0 0 0 / 0.7);
+      color: white;
+      place-self: end start;
+      width: 100%;
+      padding: 1em;
+      /* stacking context 쌓인 순서 때문에 순서 제어 필요 - 세피아 위로 올림 */
+      z-index: 1;
+    }
+  }
+}
