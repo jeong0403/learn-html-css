@@ -1,0 +1,66 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* margin 주는 것은 화면 상하좌우에서 좀 떨어뜨려서 보려고 */
+body {
+  margin: 20px;
+}
+
+/* 카드 컴포넌트 */
+.card {
+  border: 1px solid var(--pastel-gray);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 8px 1px var(--pastel-gray);
+  display: flex;
+  flex-flow: column nowrap;
+
+  .subject {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .thumbnail {
+    /* 부모 크기를 3:2로 만들고 그 안 이미지를 100% 맞춤 */
+    img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      /* 왜곡 없어짐 */
+      object-fit: cover;
+      /* 얼굴부터 보고 싶은데? 왼쪽 상단부터 노출하게 바꾸자! 포지션-> 0 0 */
+      object-position: 0 0;
+    }
+  }
+
+  .content {
+    line-height: 1.5;
+  }
+
+  .more {
+    /* '더보기'는 inline이라 위 텍스트와 겹쳐짐 그래서 display 바꾸고 가로 세로 글자 중앙 정렬 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--pastel-dark-blue);
+    color: var(--white);
+    padding: 1em;
+  }
+}
+
+/* 카드 컨테이너 */
+/* 카드 300px 유지, 더보기 위치를 어떻게 하면 동일하게 맞출까 */
+.container {
+  /* background: var(--pastel-lavender); */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 20px;
+
+  /* 서브 그리드 */
+  .card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+  }
+}
